@@ -22,7 +22,7 @@
     $productArr = array();
     $productArr["body"] = array();
     $e = array();
-
+    $i = 1;
 	while (strtotime($startdate) <= strtotime($enddate))
 	{
         $items->CE_StartDate = $startdate;
@@ -47,12 +47,13 @@
                     "RoomName" => $RoomName,
                     "RoomType" => $RoomType,
                 );
-                // array_push($productArr["body"], $e);
-            echo $e;
+                // echo var_dump($e);
+                // $result = array_intersect($e, $productArr["body"]);
+                // echo $result;
+                array_push($productArr["body"], $e);
             }
             
         }
-        
 		$startdate = date ("Y-m-d", strtotime("+1 day", strtotime($startdate)));
         $enddate1 = date("Y-m-d", strtotime("+1 day", strtotime($enddate)));
 		
